@@ -51,3 +51,51 @@ round-trip min/avg/max/stddev = 0.033/0.042/0.046/0.000 ms
 www-data
 uid=33(www-data) gid=33(www-data) groups=33(www-data)
 ```
+
+# Vulnerable Code 2
+This simple code will get a POST request with ip parameter and execute it with "shell_exec" command. Normally it intended to ping to an ip adress. There is also a blacklisting for some special characters :
+"&&"
+";"
+
+```php
+<?php
+
+if( isset( $_POST[ 'Submit' ]  ) ) {
+    // Get input
+    $target = $_REQUEST[ 'ip' ];
+
+    // Set blacklist
+    $substitutions = array(
+        '&&' => '',
+        ';'  => '',
+    );
+
+    // Remove any of the charactars in the array (blacklist).
+    $target = str_replace( array_keys( $substitutions ), $substitutions, $target );
+
+    // Determine OS and execute the ping command.
+    if( stristr( php_uname( 's' ), 'Windows NT' ) ) {
+        // Windows
+        $cmd = shell_exec( 'ping  ' . $target );
+    }
+    else {
+        // *nix
+        $cmd = shell_exec( 'ping  -c 4 ' . $target );
+    }
+
+    // Feedback for the end user
+    echo "<pre>{$cmd}</pre>";
+}
+
+?> 
+```
+
+## Abusing
+
+
+On Code 1, we execute and start a new command with ";" , this time we will use "\`" for executing system commands (on linux) as soon as bash script sees the command between this character, it will execute it.
+
+## Payload
+
+
+
