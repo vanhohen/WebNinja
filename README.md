@@ -1,7 +1,7 @@
 # WebNinja
- vulnerable web applications and codes explained
+ My understanding about vulnerable codes and explainations
  
- i collected codes and vulnerable machines from internet and blogs.
+ My own codes and collection of vulnerable machines/codes from internet and blogs.
  
  ## References
  
