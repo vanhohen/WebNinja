@@ -139,9 +139,18 @@ if( isset( $_POST[ 'btnSign' ] ) ) {
 
 In this code, there is input filtering on both "mtxMessage" and "txtName" parameter. On "mtxMessage" parameter any html and php tag will be stripped and javacript code execution will prevented but same approach didn't made for "txtName" parameter.
 
-The problem on "txtName" parameter, any given "\<script>" value inside of user input will be deleted. This filtering is not secure because it only filters lower character, we can still execute javascript with lower and upper characters because javascript is not case sensitive. Payload will be like "\<ScRipT"
+The problem on "txtName" parameter, any given "\<script>" value inside of user input will be deleted. This filtering is NOT case sensitive, "preg_replace" function will filter any given user input that contains "script". We can still execute other javascript command without "\<script>" tag. To abuse this, we will define an image tag and set source to an unknown location and force it get error. When error occurs we will make it to run our own javascript code
 
 ## Payload
 
+```php
+<IMG SRC=/ onerror="alert(1)"></img>
+```
+
 ## Result
 
+```php
+<div id="guestbook_comments">
+Name: <img src="/" onerror="alert(1)"><br>
+Message: <br></div>
+```
