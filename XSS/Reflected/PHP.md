@@ -55,7 +55,7 @@ if( array_key_exists( "name", $_GET ) && $_GET[ 'name' ] != NULL ) {
 
 ## Abuse
 
-There is filtering unlike code-1 but mechanism is not secure. The problem there any user input will be controlled and if there is "\<script>" inside of it, code will delete it. The issue here javascript can be executed with capital and lower case also so it is not case sensitive. Since code filters only "\<script>" with lower characters, we can make it like "\<ScRipT" and bypass filtering. 
+There is filtering unlike code-1 but mechanism is not secure. The problem here, any user input will be controlled and if there is "\<script>" inside of it, code will delete it. The issue here javascript can be executed with capital and lower case also so it is not case sensitive. Since code filters only "\<script>" with lower characters, we can make it like "\<ScRipT" and bypass filtering. 
 
 ## Payload
 
@@ -87,7 +87,7 @@ if( array_key_exists( "name", $_GET ) && $_GET[ 'name' ] != NULL ) {
 
 ## Abuse
 
-In this code, unlike code-2 filter is NOT case sensitive, "preg_replace" function will filter any given user input that contains "script". We can still execute other javascript command without "\<sctipt>" tag. To abuse this, we will define an image tag and set source to an unknown location and force it get error. When error occurs we will make it to run our own javascript code
+In this code, unlike code-2, filtering is NOT case sensitive, "preg_replace" function will filter any given user input that contains "script". We can still execute other javascript command without "\<sctipt>" tag. To abuse this, we will define an image tag and set source to an unknown location and force it get error. When error occurs we will make it to run our own javascript code
 
 ## Payload
 
