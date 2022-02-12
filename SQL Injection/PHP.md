@@ -31,7 +31,7 @@ if( isset( $_REQUEST[ 'Submit' ] ) ) {
 
 ## Abuse
 
-Since there is no input sanitation for user input, we can sent a payload that didnt expected and get all data from database.
+Since there is no input filtering for user input, we can sent a payload that didnt expected and get all data from database.
 
 ## Payload
 
