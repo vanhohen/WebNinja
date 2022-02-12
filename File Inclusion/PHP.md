@@ -12,7 +12,7 @@ $file = $_GET[ 'page' ];
 
 ## Abuse
 
-The problem here there is no input validation which we can include any file and read content of it.
+The problem here there is no input sanitization which we can include any file and read content of it.
 
 ## Payload
 
@@ -83,12 +83,12 @@ if( !fnmatch( "file*", $file ) && $file != "include.php" ) {
 
 ## Abuse
 
-Problem here code get a file and there is 2 condition:
+Problem here, code gets a file and there is 2 condition:
 
 - File should start with "file"
 - File shouldn't be "include.php"
 
-application expect us to read content of "file1" "file2" "file3" if we enumerate numbers near the files we can read secret file that doens't shown the user
+Application expect us to read content of "file1" "file2" "file3" if we enumerate numbers near the files we can read secret file that doens't shown the user
 
 ## Payload
 
