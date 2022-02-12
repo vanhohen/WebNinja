@@ -87,7 +87,7 @@ if( array_key_exists( "name", $_GET ) && $_GET[ 'name' ] != NULL ) {
 
 ## Abuse
 
-In this code, unlike code-2, filtering is NOT case sensitive, "preg_replace" function will filter any given user input that contains "script". We can still execute other javascript command without "\<sctipt>" tag. To abuse this, we will define an image tag and set source to an unknown location and force it get error. When error occurs we will make it to run our own javascript code
+In this code, unlike code-2, filtering is NOT case sensitive, "preg_replace" function will filter any given user input that contains "script". We can still execute other javascript command without "\<script>" tag. To abuse this, we will define an image tag and set source to an unknown location and force it get error. When error occurs we will make it to run our own javascript code
 
 ## Payload
 
