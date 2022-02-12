@@ -108,7 +108,7 @@ mysqli_close($GLOBALS["___mysqli_ston"]);
 
 # Abuse
 
-In this code, the id parameter is not inside of apostrophe character so payload will be without it and add "or 1=1" end of it
+In this code, the id parameter is not inside of apostrophe character so payload will be without it
 
 # Payload
 
