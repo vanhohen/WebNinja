@@ -88,7 +88,7 @@ Problem here, code gets a file and there is 2 condition:
 - File should start with "file"
 - File shouldn't be "include.php"
 
-Application expect us to read content of "file1" "file2" "file3" if we enumerate numbers near the files we can read secret file that doens't shown the user
+Application expect us to read content of "file1" "file2" "file3". If we enumerate numbers near the files we can read secret file that doesn't shown the user
 
 ## Payload
 
