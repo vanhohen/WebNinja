@@ -18,7 +18,7 @@ if( array_key_exists( "name", $_GET ) && $_GET[ 'name' ] != NULL ) {
 
 ## Abuse
 
-Since there is no input sanitizing we can add javascript code in our request and execute on client browser. To weponize it we can sent url to a user and redirect their session cookies or execute malicious javascript code on their browser. For simple demonstration we will make it pop-up a message
+Since there is no input filtering we can add javascript code in our request and execute on client browser. To weponize it we can sent url to a user and redirect their session cookies or execute malicious javascript code on their browser. For simple demonstration we will make it pop-up a message
 
 ## Payload
 
