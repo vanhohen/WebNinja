@@ -70,6 +70,7 @@ Surname: Smith
 ```
 
 # Vulnerable Code 2
+This code fetches "first_name" and "last_name" of a user with given "user_id"
 
 ```php
 <?php
@@ -149,6 +150,9 @@ Surname: Smith
 
 
 # Vulnerable Code 3
+
+This code fetches "first_name" and "last_name" of a user with given "user_id" and limit result to 1 dataset only.
+
 
 ```php
 <?php
