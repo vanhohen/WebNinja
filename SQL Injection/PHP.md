@@ -1,6 +1,6 @@
 # Vulnerable Code 1
 
-This code fetch "first_name" and "last_name" of a user with given "user_id"
+This code fetches "first_name" and "last_name" of a user with given "user_id"
 
 ```php
 <?php
