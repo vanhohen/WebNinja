@@ -1,3 +1,5 @@
+https://portswigger.net/web-security/sql-injection/cheat-sheet
+
 # 1 Determining the number of columns required in an SQL injection UNION attack
 
 ' ORDER BY 1-- 
